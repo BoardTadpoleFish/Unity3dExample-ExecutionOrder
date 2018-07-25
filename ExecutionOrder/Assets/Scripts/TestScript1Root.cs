@@ -15,36 +15,34 @@ namespace BoardTadpoleFish
 
         private IEnumerator Process()
         {
-            yield return ProcessEndOfFrame();
+            yield return ProcessWait();
 
             Debug.LogWarning("EnableObject2");
             object2.SetActive(true);
 
-            yield return ProcessEndOfFrame();
+            yield return ProcessWait();
 
             Debug.LogWarning("DisableObject1");
             object1.SetActive(false);
 
-            yield return ProcessEndOfFrame();
+            yield return ProcessWait();
 
             Debug.LogWarning("DestroyObject1");
             Object.Destroy(object1);
             object1 = null;
 
-            yield return ProcessEndOfFrame();
+            yield return ProcessWait();
 
             Debug.LogWarning("DestroyObject2");
             Object.Destroy(object2);
             object2 = null;
 
-            yield return ProcessEndOfFrame();
+            yield return ProcessWait();
         }
 
-        private IEnumerator ProcessEndOfFrame()
+        private IEnumerator ProcessWait()
         {
-            Debug.LogWarning("<===");
             yield return new WaitForEndOfFrame();
-            Debug.LogWarning("===>");
         }
     }
 }

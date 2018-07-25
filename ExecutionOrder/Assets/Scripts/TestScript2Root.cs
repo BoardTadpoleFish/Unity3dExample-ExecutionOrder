@@ -16,13 +16,13 @@ namespace BoardTadpoleFish
 
         private IEnumerator Process()
         {
-            yield return ProcessEndOfFrame();
+            yield return ProcessWait();
 
             Debug.LogWarning("InstantiateObject1");
             prefab.name = "GameObject 1";
             object1 = Object.Instantiate(prefab, transform);
 
-            yield return ProcessEndOfFrame();
+            yield return ProcessWait();
 
             Debug.LogWarning("InstantiateObject2");
             prefab.name = "GameObject 2";
@@ -30,19 +30,17 @@ namespace BoardTadpoleFish
             object2 = Object.Instantiate(prefab, transform);
             prefab.SetActive(true);
 
-            yield return ProcessEndOfFrame();
+            yield return ProcessWait();
 
             Debug.LogWarning("EnableObject2");
             object2.SetActive(true);
 
-            yield return ProcessEndOfFrame();
+            yield return ProcessWait();
         }
 
-        private IEnumerator ProcessEndOfFrame()
+        private IEnumerator ProcessWait()
         {
-            Debug.LogWarning("<===");
             yield return new WaitForEndOfFrame();
-            Debug.LogWarning("===>");
         }
     }
 }
