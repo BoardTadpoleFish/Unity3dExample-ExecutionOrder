@@ -29,6 +29,18 @@ namespace BoardTadpoleFish
 
             yield return ProcessWait();
 
+            Debug.LogWarning("# EnableObject1");
+            object1.SetActive(true);
+            Debug.LogWarning("# After EnableObject1");
+
+            yield return ProcessWait();
+
+            Debug.LogWarning("# DisableObject1-2");
+            object1.SetActive(false);
+            Debug.LogWarning("# After DisableObject1-2");
+
+            yield return ProcessWait();
+
             Debug.LogWarning("# DestroyObject1");
             Object.Destroy(object1);
             Debug.LogWarning("# After DestroyObject1");
