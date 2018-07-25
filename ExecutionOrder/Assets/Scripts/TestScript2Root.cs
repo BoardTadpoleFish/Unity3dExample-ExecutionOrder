@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace BoardTadpoleFish
 {
+    // Ref. https://gist.github.com/BoardTadpoleFish/007edaa817ea08400e5af43e25749ab8#file-testscript2root-cs
+    // Result: Unity3dExample-ExecutionOrder-Result2: https://pastebin.com/b9n3gEGv
     public class TestScript2Root : MonoBehaviour
     {
         [SerializeField] private GameObject prefab;
